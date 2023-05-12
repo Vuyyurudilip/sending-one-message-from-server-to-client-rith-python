@@ -1,0 +1,18 @@
+where one device acts as the server and listens for incoming connections, while the other device acts as the client and connects to the server to exchange messages.
+server Setup:
+
+     The server creates a socket object and binds it to a specific IP address and port number.
+     The server listens for incoming connections using the listen() method.
+     Once a client connects, the server accepts the connection using the accept() method.
+
+client Setup:
+
+    The client creates a socket object.
+    The client uses the socket's connect() method to establish a connection with the server, providing the server's IP address and port number.
+
+message Exchange:
+
+    The client and server can send and receive messages using the socket's send() and recv() methods.
+    The sender encodes the message into bytes before sending it, and the receiver decodes the received bytes back into a string.
+    Messages can be sent in both directions, allowing for bidirectional communication.
+if message is quit then close connection.
