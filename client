@@ -1,0 +1,16 @@
+#client side
+import socket
+
+client_socket = socket.socket()
+host = 'localhost'
+port = 11111
+
+client_socket.connect((host, port))
+while True:
+    message = input('Enter a message: ')
+    client_socket.send(message.encode())
+    response = client_socket.recv(1024).decode()
+    print(response)
+    if message == 'quit':
+        client_socket.close()
+        break
